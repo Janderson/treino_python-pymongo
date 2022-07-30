@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  mongodb:
+    hostname: mongodb
+    image: mongo:5
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - db1_data:/data/db
+      - db1_config:/data/configdb
+      - ./scripts:/scripts
+
+  
+volumes:
+  db1_data:
+  db1_config:
+  db_pgdata:
+  db_pgconf:
